@@ -1,0 +1,36 @@
+{
+  "name": "saros-dlmm-portfolio-dashboard",
+  "version": "1.0.0",
+  "description": "DeFi Portfolio Analytics Dashboard for Saros DLMM LPs",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && cargo run",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && cargo build --release",
+    "install:all": "npm install && cd frontend && npm install",
+    "test": "npm run test:frontend && npm run test:backend",
+    "test:frontend": "cd frontend && npm test",
+    "test:backend": "cd backend && cargo test"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "defi",
+    "solana",
+    "saros",
+    "dlmm",
+    "portfolio",
+    "analytics",
+    "liquidity-provider"
+  ],
+  "author": "DeFi Portfolio Analytics Team",
+  "license": "MIT"
+}
